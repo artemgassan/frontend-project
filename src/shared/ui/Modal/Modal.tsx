@@ -29,15 +29,15 @@ export const Modal = (props: ModalProps) => {
         [cls.isClosing]: isClosing,
     };
 
-    const closeHandler = () => {
-        if (onClose) {
+    const closeHandler = useCallback(() => {
+        if(onClose) {
             setIsClosing(true);
             timerRef.current = setTimeout(() => {
                 onClose();
                 setIsClosing(false);
             }, ANIMATION_DELAY);
         }
-    };
+    }, [onClose]);
 
     const onKeyDown = useCallback((e: KeyboardEvent) => {
         if (e.key === 'Escape') {
