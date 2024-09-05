@@ -30,7 +30,7 @@ export const Modal = (props: ModalProps) => {
     };
 
     const closeHandler = useCallback(() => {
-        if(onClose) {
+        if (onClose) {
             setIsClosing(true);
             timerRef.current = setTimeout(() => {
                 onClose();
@@ -58,7 +58,7 @@ export const Modal = (props: ModalProps) => {
             clearTimeout(timerRef.current);
             window.removeEventListener('keydown', onKeyDown);
         };
-    }, [isOpen]);
+    }, [isOpen, onKeyDown]);
 
     return (
         <div className={classNames(cls.Modal, mods, [className])}>
