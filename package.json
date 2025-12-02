@@ -96,6 +96,9 @@
     "configurations": {
       "chrome.laptop": {
         "target": "chrome.docker",
+        "dockerOptions": {
+          "securityOpt": ["seccomp=unconfined"]
+        },
         "width": 1366,
         "height": 768,
         "deviceScaleFactor": 1,
@@ -103,6 +106,9 @@
       },
       "chrome.iphone7": {
         "target": "chrome.docker",
+        "dockerOptions": {
+          "securityOpt": ["seccomp=unconfined"]
+        },
         "preset": "iPhone 7"
       }
     }
